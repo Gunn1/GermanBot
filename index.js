@@ -50,7 +50,9 @@ client.on('message', msg => {
     	if (message == 'avatar') {
     		msg.reply(msg.author.avatarURL);
     	}
+    	help = false;
     	if (message == 'admin') {
+    		if (help == true) {
     		msg.author.send("What do you want the message to include?:")
         const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id);
         console.log(collector)
@@ -69,6 +71,7 @@ client.on('message', msg => {
             }
         })
     	}
+    }
     	}
     	if (message == 'help') {
     	const exampleEmbed = new Discord.RichEmbed()
