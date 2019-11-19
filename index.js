@@ -51,9 +51,10 @@ client.on('message', msg => {
 			msg.reply('Getting your avatar ' + msg.author)
     		msg.reply(msg.author.avatarURL);
     	}
-    	help = true;
+    	
     	if (message == 'admin') {
-    		while (help == true) {
+    		help = true;
+    		if (help == true) {
     		msg.author.send("What do you want the message to include?:")
         const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id);
         console.log(collector)
