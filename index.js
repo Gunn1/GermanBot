@@ -78,7 +78,7 @@ client.on('message', msg => {
             if (msg.content == "!ban") {
             	msg.reply("Banning Admin")
             }
-            if (msg.content == "mute") {
+            if (msg.content == "mute") 
             	{
   "name": "tempmute",
   "permissions": "NONE",
@@ -160,7 +160,7 @@ client.on('message', msg => {
     }
   ]
 }
-            }
+            
 
 
             if ( usermessage != " " ){
