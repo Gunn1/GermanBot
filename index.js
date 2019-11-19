@@ -55,7 +55,7 @@ client.on('message', msg => {
     	if (message == 'admin') {
     		if (help == true) {
     		msg.author.send("What do you want the message to include?:")
-        const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id);
+        const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id, {max: 1});
         console.log(collector)
         collector.on('collect', msg => {
         	usermessage = msg.content;
@@ -67,7 +67,6 @@ client.on('message', msg => {
             if ( usermessage != " " ){
             msg.author.send("Thanks Sending it now");
 		    client.channels.get("641442259417563138").send(msg.author + " @here Needs Help With: " + usermessage )
-            return help = false
             }
         })
     }	
