@@ -10,11 +10,11 @@ client.on('ready', () => {
 client.on('message', msg => {
 
 
-	if (message.content.startsWith("$ban")) {
+	if (msg.content.startsWith("$ban")) {
         // Easy way to get member object though mentions.
-        var member= message.mentions.members.first();
+        var member= msg.mentions.members.first();
         // ban
-        msg.ban().then((member) => {
+        member.ban().then((msg) => {
             // Successmessage
             msg.channel.send(":wave: " + msg.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
         }).catch(() => {
