@@ -48,6 +48,7 @@ client.on('message', msg => {
     }
 
     	if (message == 'avatar') {
+			msg.reply('Getting your avatar ' + msg.author)
     		msg.reply(msg.author.avatarURL);
     	}
     	help = true;
