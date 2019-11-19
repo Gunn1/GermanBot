@@ -53,8 +53,7 @@ client.on('message', msg => {
     	}
     	
     	if (message == 'admin') {
-    		help = true;
-    		if (help == true) {
+    		if (help == false) {
     		msg.author.send("What do you want the message to include?:")
         const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id);
         console.log(collector)
@@ -66,15 +65,12 @@ client.on('message', msg => {
 
 
             if ( usermessage != " " ){
-                msg.author.send("Thanks Sending it now");
-                help = false;
-                client.channels.get("641442259417563138").send(msg.author + " @here Needs Help With: " + usermessage )
-            } else if (msg.content == "n") {
-                msg.author.send("Okay will not send");
-                help = false;
+            msg.author.send("Thanks Sending it now");
+		    client.channels.get("641442259417563138").send(msg.author + " @here Needs Help With: " + usermessage )
+            return help = false
             }
         })
-    	}
+    }	
     }
     	}
     	if (message == 'help') {
