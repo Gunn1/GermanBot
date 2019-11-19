@@ -16,8 +16,8 @@ client.on('message', msg => {
   	if (msg.content.startsWith(prefix)) {
 		var message = msg.content;
     	message = message.slice(1);
-    	if (message == "remove") {
-    		var num = message.replace(/[^0-9]/g,'');
+    	var num = message.replace(/[^0-9]/g,'');
+    	if (msg.content == prefix + "remove" + num) {
 			async function clear() {
             msg.delete();
             const fetched = await msg.channel.fetchMessages({limit: num});
