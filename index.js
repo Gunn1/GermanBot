@@ -11,7 +11,7 @@ client.on('message', msg => {
 
 
 	  // if the message content starts with "!ban"
-  if (message.content.startsWith('!ban')) {
+  if (msg.content.startsWith('!ban')) {
     // Assuming we mention someone in the message, this will return the user
     // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
     const user = msg.mentions.users.first();
