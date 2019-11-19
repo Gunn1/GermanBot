@@ -8,10 +8,14 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', msg => {
+	let adminRole = msg.guild.roles.find("name", "Admin");
 
 
 	  // if the message content starts with "!ban"
   if (msg.content.startsWith('!ban')) {
+  	if (msg.member.roles.find(r => r.name === "Admin") || msg.member.roles.find(r => r.name === "Owner")) {
+
+
     // Assuming we mention someone in the message, this will return the user
     // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
     const user = msg.mentions.users.first();
@@ -49,6 +53,7 @@ client.on('message', msg => {
     // Otherwise, if no user was mentioned
       msg.reply('You didn\'t mention the user to ban!');
     }
+}
   }
 
 
