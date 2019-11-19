@@ -53,6 +53,26 @@ client.on('message', msg => {
     // Otherwise, if no user was mentioned
       msg.reply('You didn\'t mention the user to ban!');
     }
+    if (msg.content == prefix + "remove " + num) {
+			async function clear() {
+            msg.delete();
+            const fetched = await msg.channel.fetchMessages({limit: num});
+            msg.channel.bulkDelete(fetched);
+            client.channels.get("641442259417563138").send(num + " Messages Have Been Deleted By " + msg.author)
+
+        }
+
+        clear();
+    	}
+    	    	var num = msg.content.replace( /^\D+/g, '');
+    	if (msg.content == prefix + 'purge') {
+    		async function purge() {
+            msg.delete();
+            const fetched = await msg.channel.fetchMessages({limit: 100});
+            msg.channel.bulkDelete(fetched);
+        }
+        purge()
+    	}
 }
   }
 
@@ -68,26 +88,7 @@ client.on('message', msg => {
   	/*if (msg.content.startsWith(prefix))*/ //{
 		var message = msg.content;
     	message = message.slice(1);
-    	var num = msg.content.replace( /^\D+/g, '');
-    	if (msg.content == prefix + 'purge') {
-    		async function purge() {
-            msg.delete();
-            const fetched = await msg.channel.fetchMessages({limit: 100});
-            msg.channel.bulkDelete(fetched);
-        }
-        purge()
-    	}
-    	if (msg.content == prefix + "remove " + num) {
-			async function clear() {
-            msg.delete();
-            const fetched = await msg.channel.fetchMessages({limit: num});
-            msg.channel.bulkDelete(fetched);
-            client.channels.get("641442259417563138").send(num + " Messages Have Been Deleted By " + msg.author)
 
-        }
-
-        clear();
-    	}
 
     if (message == 'translate') {
 
