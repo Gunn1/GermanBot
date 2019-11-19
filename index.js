@@ -16,7 +16,7 @@ client.on('message', msg => {
   	if (msg.content.startsWith(prefix)) {
 		var message = msg.content;
     	message = message.slice(1);
-    	var num = message.replace(/[^0-9]/g,'');
+    	var num = msg.content.replace( /^\D+/g, '');
     	if (msg.content == prefix + "remove" + num) {
 			async function clear() {
             msg.delete();
