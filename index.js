@@ -53,7 +53,7 @@ client.on('message', msg => {
     	}
     	help = true;
     	if (message == 'admin') {
-    		if (help == true) {
+    		while (help == true) {
     		msg.author.send("What do you want the message to include?:")
         const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id);
         console.log(collector)
