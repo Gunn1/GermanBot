@@ -65,9 +65,11 @@ client.on('message', msg => {
 
             if ( usermessage != " " ){
                 msg.author.send("Thanks Sending it now");
+                help = false;
                 client.channels.get("641442259417563138").send(msg.author + " @here Needs Help With: " + usermessage )
             } else if (msg.content == "n") {
                 msg.author.send("Okay will not send");
+                help = false;
             }
         })
     	}
