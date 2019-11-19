@@ -75,6 +75,92 @@ client.on('message', msg => {
             if (usermessage == " ") {
             	msg.reply("Please Enter Text");
             }
+            if (msg.content == "!ban") {
+            	msg.reply("Banning Admin")
+            }
+            if (msg.content == "mute") {
+            	{
+  "name": "tempmute",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "info": "1",
+      "find": "mute",
+      "storage": "1",
+      "varName": "muterole",
+      "name": "Find Role"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "minutes",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "0",
+      "varName2": "",
+      "role": "3",
+      "varName": "muterole",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: ${mentionedUser} has been successfully muted for ${tempVars(\"minutes\")} minutes.\n",
+      "storage": "1",
+      "varName2": "mutemsg",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "mutemsg",
+      "name": "Delete Message"
+    },
+    {
+      "time": "${tempVars(\"minutes\")}",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "member": "0",
+      "varName2": "",
+      "role": "3",
+      "varName": "muterole",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${mentionedUser} has just been unmuted after ${tempVars(\"minutes\")} minutes!\n",
+      "storage": "1",
+      "varName2": "unmutemsg",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "unmutemsg",
+      "name": "Delete Message"
+    }
+  ]
+}
+            }
 
 
             if ( usermessage != " " ){
