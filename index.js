@@ -16,10 +16,10 @@ client.on('message', msg => {
         // ban
         member.ban().then((member) => {
             // Successmessage
-            message.channel.send(":wave: " + member.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
+            msg.channel.send(":wave: " + msg.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
         }).catch(() => {
              // Failmessage
-            message.channel.send("Access Denied");
+            msg.channel.send("Access Denied");
         });
     }
 
