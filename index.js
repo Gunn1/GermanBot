@@ -83,6 +83,7 @@ client.on('message', msg => {
     }
     	
     	if (message == 'help') {
+    		msg.delete()
     	const exampleEmbed = new Discord.RichEmbed()
 			.setColor('#0099ff')
 			.setTitle('UNSC')
