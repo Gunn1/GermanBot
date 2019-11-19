@@ -92,21 +92,6 @@ if (msg.member.roles.find(r => r.name === "Admin") || msg.member.roles.find(r =>
         clear();
     }
     	}
-
-    if (message == 'translate') {
-
-    msg.reply("Translating")
-    let transUrl = 'https://nodejs.org/en/';
-  	translate.getPage(transUrl).then(function(htmlStr){
-    console.log(htmlStr.length)
-  	});
- 	let message = 'hello';
-  	translate.getText(message,{to: 'De'}).then(function(text){
-    console.log(text)
-    msg.reply(text)
-  		});
-
-    }
     	if (message === 'rip') {
         // Create the attachment using Attachment
         const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
@@ -153,9 +138,7 @@ if (msg.member.roles.find(r => r.name === "Admin") || msg.member.roles.find(r =>
 			.addField('!admin', 'will request help from a admin')
 			.addBlankField()
 			.addField('!rip', 'Try it and find out', true)
-			.addField('!translate', 'Get links for translateing', true)
 			.addField('!avatar', 'get your avatar', true)
-			.addField('!remove', 'Removes All messages that are not 2 weeks old!', true)
 			.setTimestamp('Thanks for Asking Bot')
 			.setFooter('Help Bot', 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1024px-Flag_of_Germany.svg.png');
 
