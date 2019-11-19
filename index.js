@@ -17,9 +17,10 @@ client.on('message', msg => {
 		var message = msg.content;
     	message = message.slice(1);
     	if (message == "remove") {
+    		var num = message.replace(/[^0-9]/g,'');
 			async function clear() {
             msg.delete();
-            const fetched = await msg.channel.fetchMessages({limit: 99});
+            const fetched = await msg.channel.fetchMessages({limit: num});
             msg.channel.bulkDelete(fetched);
         }
 
