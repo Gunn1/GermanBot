@@ -12,6 +12,9 @@ client.on('message', msg => {
     	msg.reply('pong');
     	pms();
   	}
+  	if (msg.content == "!Do") {
+  		msg.reply("I can do lots of things like remove messages and getting your avatar I also can help you! just Private Message Me !admin for help")
+  	}
   	var prefix = '!';
   	/*if (msg.content.startsWith(prefix))*/ //{
 		var message = msg.content;
