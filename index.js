@@ -17,7 +17,7 @@ client.on('message', msg => {
 			.setAuthor('ShadowGun', 'https://i.imgur.com/wSTFkRM.png', 'https://unscnerf.com')
 			.setDescription('New')
 			.setThumbnail('https://content.shopback.com/sg/wp-content/uploads/2015/05/Neuschwanstein-Castle-Germany.jpg')
-			.addField('', 'will request help from a admin')
+			.addField('!admin', 'will request help from a admin')
 			.addBlankField()
 			.addField('!rip', 'Will display rip', true)
 			.addField('!avatar', 'get your avatar', true)
