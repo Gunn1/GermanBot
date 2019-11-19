@@ -13,15 +13,25 @@ client.on('message', msg => {
     	pms();
   	}
   	var prefix = '!';
-  	if (msg.content.startsWith(prefix)) {
+  	/*if (msg.content.startsWith(prefix))*/ //{
 		var message = msg.content;
     	message = message.slice(1);
     	var num = msg.content.replace( /^\D+/g, '');
-    	if (msg.content == prefix + "remove" + num) {
+    	if (msg.content == prefix + 'purge') {
+    		async function purge() {
+            msg.delete();
+            const fetched = await msg.channel.fetchMessages({limit: 100});
+            msg.channel.bulkDelete(fetched);
+        }
+        purge()
+    	}
+    	if (msg.content == prefix + "remove " + num) {
 			async function clear() {
             msg.delete();
             const fetched = await msg.channel.fetchMessages({limit: num});
             msg.channel.bulkDelete(fetched);
+            client.channels.get("641442259417563138").send(num + " Messages Have Been Deleted By " + msg.author)
+
         }
 
         clear();
@@ -72,7 +82,7 @@ client.on('message', msg => {
         })
     }	
     }
-    	}
+    	
     	if (message == 'help') {
     	const exampleEmbed = new Discord.RichEmbed()
 			.setColor('#0099ff')
@@ -94,8 +104,8 @@ client.on('message', msg => {
 
 
   	
-
 }
+//}
 });
 
 
