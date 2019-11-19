@@ -50,7 +50,7 @@ client.on('message', msg => {
     	if (message == 'avatar') {
     		msg.reply(msg.author.avatarURL);
     	}
-    	help = false;
+    	help = true;
     	if (message == 'admin') {
     		if (help == true) {
     		msg.author.send("What do you want the message to include?:")
