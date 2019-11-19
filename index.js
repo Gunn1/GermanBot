@@ -62,9 +62,8 @@ client.on('message', msg => {
 			msg.reply('Getting your avatar ' + msg.author)
     		msg.reply(msg.author.avatarURL);
     	}
-    	help = true;
     	if (message == 'admin') {
-    		if (help == true) {
+    		msg.author.send("Sorry Was not able to start please say !admin again")
     		msg.author.send("What do you want the message to include?:")
         const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === msg.author.id, {max: 1});
         console.log(collector)
@@ -80,7 +79,7 @@ client.on('message', msg => {
 		    client.channels.get("641442259417563138").send(msg.author + " @here Needs Help With: " + usermessage )
             }
         })
-    }	
+    	
     }
     	
     	if (message == 'help') {
