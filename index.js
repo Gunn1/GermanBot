@@ -11,15 +11,18 @@ client.on('message', msg => {
 
 
 	if (msg.content.startsWith("$ban")) {
-        // Easy way to get member object though mentions.
-        var member= msg.mentions.members.first();
-        // ban
-        member.ban().then((msg) => {
-            // Successmessage
-            msg.channel.send(":wave: " + msg.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
-        }).catch(() => {
-             // Failmessage
-            msg.channel.send("Access Denied");
+                member.ban({
+          reason: 'They were bad!',
+        }).then(() => {
+          // We let the message author know we were able to ban the person
+          message.reply(`Successfully banned ${user.tag}`);
+        }).catch(err => {
+          // An error happened
+          // This is generally due to the bot not being able to ban the member,
+          // either due to missing permissions or role hierarchy
+          message.reply('I was unable to ban the member');
+          // Log the error
+          console.error(err);
         });
     }
 
