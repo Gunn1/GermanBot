@@ -8,6 +8,22 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', msg => {
+
+
+	if (message.content.startsWith("$ban")) {
+        // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // ban
+        member.ban().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+    }
+
+
   	if (msg.content === 'ping') {
     	msg.reply('pong');
     	pms();
