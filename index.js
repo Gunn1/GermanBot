@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', msg => {
 	if (msg.content == "!new") {
 		msg.delete()
-    	const exampleEmbed = new Discord.RichEmbed()
+    	const newEmbed = new Discord.RichEmbed()
 			.setColor('#0099ff')
 			.setTitle('UNSC')
 			.setURL('https://unscnerf.com')
@@ -21,13 +21,13 @@ client.on('message', msg => {
 			.addBlankField()
 			.addField('!rip', 'Will display rip', true)
 			.addField('!avatar', 'get your avatar', true)
-			.addField('!ban (name)', 'This will ban users' true)
+			.addField('!ban (name)', 'This will ban users', true)
 			.addField('!purge', 'This Will remove 100 messages from the channel your in unless they are two weeks old', true )
 			.addField('!remove (number)', 'This will remove as many messages as you want just enter your number', true)
 			.setTimestamp('Thanks for Asking Bot')
 			.setFooter('Help Bot', 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1024px-Flag_of_Germany.svg.png');
 
-	msg.channel.send(exampleEmbed);
+	msg.channel.send(newEmbed);
 	}
 
 
