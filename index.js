@@ -14,7 +14,7 @@ client.on('message', msg => {
         // Easy way to get member object though mentions.
         var member= message.mentions.members.first();
         // ban
-        member.ban().then((member) => {
+        msg.ban().then((member) => {
             // Successmessage
             msg.channel.send(":wave: " + msg.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
         }).catch(() => {
