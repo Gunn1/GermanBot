@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const functions = require('./functions.js');
 //This Is For Getting Your Bot Token
 const auth = require('./auth.json');
 const { Client, Attachment } = require('discord.js');
 //translate Might be in a update
-const translate = require('translate-api');
 //This is the prefix
 var prefix = '!';
 //This is the !new Embed
@@ -85,7 +83,7 @@ client.on('message', msg => {
 		var message = msg.content;
     	message = message.slice(1);
     	var num = msg.content.replace( /^\D+/g, '');
-    	if (msg.content == prefix + 'purge') {
+    	if (msg.content === '!purge') {
         //Deletes 100 messages
          async function purge() {
             if (msg.member.roles.find(r => r.name === "Admin") || msg.member.roles.find(r => r.name === "Owner")) {
@@ -94,6 +92,7 @@ client.on('message', msg => {
             msg.channel.bulkDelete(fetched);
      
         }
+      }
         purge();
     }
     	if (msg.content == prefix + "remove " + num) {
@@ -105,9 +104,9 @@ client.on('message', msg => {
             client.channels.get("641442259417563138").send(num + " Messages Have Been Deleted By " + msg.author)
         }
     }
+
     clear();
     }
-}
 
 });
 
