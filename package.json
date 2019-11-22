@@ -1,0 +1,16 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ShadowGun",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "google-translate-api": "^2.3.0",
+    "translate-api": "^0.3.18"
+  }
+}
